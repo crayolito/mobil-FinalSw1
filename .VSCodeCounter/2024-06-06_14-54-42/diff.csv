@@ -1,0 +1,25 @@
+"filename", "language", "Dart", "comment", "blank", "total"
+"c:\Users\Alejandro\Desktop\Semestre 1-2024\SW1\Proyecto Final\app_sw1\app_sw1final\lib\blocs\blocs.dart", "Dart", 0, 0, 1, 1
+"c:\Users\Alejandro\Desktop\Semestre 1-2024\SW1\Proyecto Final\app_sw1\app_sw1final\lib\blocs\map\map_bloc.dart", "Dart", -59, -6, -10, -75
+"c:\Users\Alejandro\Desktop\Semestre 1-2024\SW1\Proyecto Final\app_sw1\app_sw1final\lib\blocs\map\map_event.dart", "Dart", 7, 0, 3, 10
+"c:\Users\Alejandro\Desktop\Semestre 1-2024\SW1\Proyecto Final\app_sw1\app_sw1final\lib\blocs\options-map\options_map_bloc.dart", "Dart", 1, 0, 0, 1
+"c:\Users\Alejandro\Desktop\Semestre 1-2024\SW1\Proyecto Final\app_sw1\app_sw1final\lib\blocs\options-map\options_map_state.dart", "Dart", -1, 1, 0, 0
+"c:\Users\Alejandro\Desktop\Semestre 1-2024\SW1\Proyecto Final\app_sw1\app_sw1final\lib\features\home\presentation\screen\home-screen.dart", "Dart", -224, -5, -21, -250
+"c:\Users\Alejandro\Desktop\Semestre 1-2024\SW1\Proyecto Final\app_sw1\app_sw1final\lib\features\home\presentation\widget\body-hs.dart", "Dart", 72, 3, 6, 81
+"c:\Users\Alejandro\Desktop\Semestre 1-2024\SW1\Proyecto Final\app_sw1\app_sw1final\lib\features\home\presentation\widget\header-hs.dart", "Dart", 28, 0, 5, 33
+"c:\Users\Alejandro\Desktop\Semestre 1-2024\SW1\Proyecto Final\app_sw1\app_sw1final\lib\features\home\presentation\widget\swiperPersonalized-hs.dart", "Dart", 67, 1, 8, 76
+"c:\Users\Alejandro\Desktop\Semestre 1-2024\SW1\Proyecto Final\app_sw1\app_sw1final\lib\features\map\presentation\component\DetailsOfMall.dart", "Dart", 5, 0, 3, 8
+"c:\Users\Alejandro\Desktop\Semestre 1-2024\SW1\Proyecto Final\app_sw1\app_sw1final\lib\features\map\presentation\screen\infoWindow-screen.dart", "Dart", 2, 0, 0, 2
+"c:\Users\Alejandro\Desktop\Semestre 1-2024\SW1\Proyecto Final\app_sw1\app_sw1final\lib\features\map\presentation\screen\map-screen.dart", "Dart", 2, 0, 0, 2
+"c:\Users\Alejandro\Desktop\Semestre 1-2024\SW1\Proyecto Final\app_sw1\app_sw1final\lib\features\map\presentation\widget\fotter-iw.dart", "Dart", -3, 0, 0, -3
+"c:\Users\Alejandro\Desktop\Semestre 1-2024\SW1\Proyecto Final\app_sw1\app_sw1final\lib\features\map\presentation\widget\geo-navifation-ms.dart", "Dart", 2, -1, 0, 1
+"c:\Users\Alejandro\Desktop\Semestre 1-2024\SW1\Proyecto Final\app_sw1\app_sw1final\lib\features\map\presentation\widget\map-view.dart", "Dart", 3, 0, 0, 3
+"c:\Users\Alejandro\Desktop\Semestre 1-2024\SW1\Proyecto Final\app_sw1\app_sw1final\lib\features\map\presentation\widget\typeMap-ms.dart", "Dart", 1, 0, 0, 1
+"c:\Users\Alejandro\Desktop\Semestre 1-2024\SW1\Proyecto Final\app_sw1\app_sw1final\lib\features\product\presentation\screen\camera-screen.dart", "Dart", 1, 0, 1, 2
+"c:\Users\Alejandro\Desktop\Semestre 1-2024\SW1\Proyecto Final\app_sw1\app_sw1final\lib\helpers\marker_personalite.dart", "Dart", 41, 2, 10, 53
+"c:\Users\Alejandro\Desktop\Semestre 1-2024\SW1\Proyecto Final\app_sw1\app_sw1final\lib\helpers\markersCustom.dart", "Dart", 187, 13, 17, 217
+"c:\Users\Alejandro\Desktop\Semestre 1-2024\SW1\Proyecto Final\app_sw1\app_sw1final\lib\helpers\widget_to_market.dart", "Dart", 14, 0, 5, 19
+"c:\Users\Alejandro\Desktop\Semestre 1-2024\SW1\Proyecto Final\app_sw1\app_sw1final\lib\main.dart", "Dart", 2, 0, 0, 2
+"c:\Users\Alejandro\Desktop\Semestre 1-2024\SW1\Proyecto Final\app_sw1\app_sw1final\lib\shared\buttonPIconText.dart", "Dart", 39, 1, 6, 46
+"c:\Users\Alejandro\Desktop\Semestre 1-2024\SW1\Proyecto Final\app_sw1\app_sw1final\lib\shared\buttonPText.dart", "Dart", 49, 1, 4, 54
+"Total", "-", 236, 10, 38, 284
