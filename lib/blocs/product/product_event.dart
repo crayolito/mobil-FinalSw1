@@ -16,7 +16,6 @@ class OnChangeProductsCaseta extends ProductEvent {
   const OnChangeProductsCaseta();
 }
 
-
 class OnChangeStatusProcessIA extends ProductEvent {
   final StatusProccessIA statusProccessIA;
   const OnChangeStatusProcessIA(this.statusProccessIA);
@@ -33,13 +32,17 @@ class OnChangeImageProducto extends ProductEvent {
 }
 
 class OnProcessCargaImagen extends ProductEvent {
+  final BuildContext context;
   final String filePath;
-  const OnProcessCargaImagen(this.filePath);
+  const OnProcessCargaImagen({
+    required this.context,
+    required this.filePath,
+  });
 }
 
 class OnProcessIA extends ProductEvent {
-  final String texto;
-  const OnProcessIA(this.texto);
+  final BuildContext context;
+  const OnProcessIA(this.context);
 }
 
 class OnProcessGetProducts extends ProductEvent {

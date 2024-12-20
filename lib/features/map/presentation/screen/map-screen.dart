@@ -26,11 +26,14 @@ class MapScreen extends StatefulWidget {
 class _MapScreenState extends State<MapScreen> {
   late LocationBloc locationBloc;
   late InfoMarkerBloc infoMarkerBloc;
+  late MapBloc mapBloc;
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     locationBloc = BlocProvider.of<LocationBloc>(context);
+    mapBloc = BlocProvider.of<MapBloc>(context);
     infoMarkerBloc = BlocProvider.of<InfoMarkerBloc>(context);
     locationBloc.startFollowingUser();
   }
@@ -38,6 +41,8 @@ class _MapScreenState extends State<MapScreen> {
   @override
   void dispose() {
     // TODO: implement dispose
+    // OnCleanRutaPasada
+    mapBloc.add(OnCleanRutaPasada());
     infoMarkerBloc.add(const OnChangeViewInfo(false));
     locationBloc.stopFolowwingUser();
     super.dispose();

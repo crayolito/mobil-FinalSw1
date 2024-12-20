@@ -8,6 +8,8 @@ class MapState extends Equatable {
   final bool processMap;
   final bool isMapInitialized;
   final bool followUser;
+  final double rutaComplejidadIndice;
+  final double rutaOptimaCosto;
 
   // POLIGONOS PARA EL MAPA
   Map<String, Polyline> polylines;
@@ -16,6 +18,8 @@ class MapState extends Equatable {
   final MapStatus statusMap;
 
   MapState({
+    this.rutaComplejidadIndice = 0,
+    this.rutaOptimaCosto = 0,
     this.processMap = false,
     this.isMapInitialized = false,
     this.followUser = false,
@@ -28,6 +32,8 @@ class MapState extends Equatable {
         polygons = polygons ?? {};
 
   MapState copyWith({
+    double? rutaComplejidadIndice,
+    double? rutaOptimaCosto,
     bool? processMap,
     bool? isMapInitialized,
     bool? followUser,
@@ -37,6 +43,9 @@ class MapState extends Equatable {
     MapStatus? statusMap,
   }) {
     return MapState(
+      rutaComplejidadIndice:
+          rutaComplejidadIndice ?? this.rutaComplejidadIndice,
+      rutaOptimaCosto: rutaOptimaCosto ?? this.rutaOptimaCosto,
       processMap: processMap ?? this.processMap,
       isMapInitialized: isMapInitialized ?? this.isMapInitialized,
       followUser: followUser ?? this.followUser,
@@ -46,8 +55,6 @@ class MapState extends Equatable {
       statusMap: statusMap ?? this.statusMap,
     );
   }
-
-  
 
   @override
   List<Object> get props => [

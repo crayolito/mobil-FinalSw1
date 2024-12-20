@@ -1,9 +1,9 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:app_sw1final/blocs/options-map/options_map_bloc.dart';
 import 'package:app_sw1final/blocs/product/product_bloc.dart';
+import 'package:app_sw1final/config/constants/colors.const.dart';
 import 'package:app_sw1final/config/constants/constantes.dart';
 import 'package:app_sw1final/data/data-auxiliar.dart';
-import 'package:app_sw1final/features/product/domain/entities/producto.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -63,19 +63,8 @@ class _SearchScreenState extends State<SearchScreen> {
     final TextStyle bodySmall = Theme.of(context).textTheme.bodySmall!;
     final TextStyle displayLarge = Theme.of(context).textTheme.displayLarge!;
     final TextStyle displayMedium = Theme.of(context).textTheme.displayMedium!;
-    final TextStyle displaySmall = Theme.of(context).textTheme.displaySmall!;
     final optionsMapBloc = BlocProvider.of<OptionsMapBloc>(context);
-    const decoration = BoxDecoration(
-        color: Colors.white,
-        border: Border(
-            top: BorderSide(
-          color: Colors.black,
-          width: 4,
-        )),
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(30),
-          topRight: Radius.circular(30),
-        ));
+
     final size = MediaQuery.of(context).size;
     return Scaffold(
       body: Stack(
@@ -464,235 +453,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 ),
               )),
           // Search Result
-          Positioned(
-              top: size.height * 0.16,
-              child: Container(
-                  padding: EdgeInsets.only(
-                      bottom: optionsMapBloc.state.options == MapOptions.product
-                          ? size.height * 0
-                          : size.height * 0.069),
-                  margin: EdgeInsets.only(
-                    top: optionsMapBloc.state.options == MapOptions.product
-                        ? size.height * 0.05
-                        : size.height * 0.005,
-                  ),
-                  width: size.width,
-                  height: size.height * 0.9,
-                  color: Colors.white,
-                  child: optionsMapBloc.state.options == MapOptions.product
-                      ? GridView.builder(
-                          physics: const BouncingScrollPhysics(),
-                          scrollDirection: Axis.vertical,
-                          itemCount:
-                              productBloc.state.viewClientProductos.length,
-                          padding: EdgeInsets.only(
-                            bottom: size.height * 0.1,
-                          ),
-                          gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            mainAxisExtent: size.height * 0.39,
-                            childAspectRatio: size.width * 0.05,
-                          ),
-                          itemBuilder: (context, index) {
-                            // READ: AQUI ES DONDE TRAIGO TODOS LOS PRODUCTOS
-                            Producto producto =
-                                productBloc.state.viewClientProductos[index];
-                            return FadeInLeft(
-                              child: GestureDetector(
-                                onTap: () {
-                                  optionsMapBloc
-                                      .add(const OnChangeSearchPageMap(false));
-                                  Navigator.pushNamed(context, '/product');
-                                },
-                                child: Container(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: size.width * 0.02,
-                                      vertical: size.height * 0.015),
-                                  margin: EdgeInsets.symmetric(
-                                      horizontal: size.width * 0.025,
-                                      vertical: size.height * 0.02),
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(20),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.grey.withOpacity(0.5),
-                                        spreadRadius: 5,
-                                        blurRadius: 7,
-                                        offset: const Offset(0, 3),
-                                      ),
-                                    ],
-                                  ),
-                                  child: Column(
-                                    children: [
-                                      Container(
-                                        height: (size.height * 0.37) * 0.63,
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                            image: NetworkImage(producto.image),
-                                            fit: BoxFit.cover,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(20),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(
-                                            vertical:
-                                                (size.height * 0.37) * 0.01),
-                                        child: Align(
-                                          alignment: Alignment.centerLeft,
-                                          child: Text(
-                                            producto.name,
-                                            maxLines: 1,
-                                            overflow: TextOverflow.ellipsis,
-                                            style: displayMedium,
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(
-                                            vertical:
-                                                (size.height * 0.37) * 0.01),
-                                        child: Row(
-                                          children: [
-                                            Text(
-                                              '\$${producto.price}',
-                                              style: displayMedium,
-                                            ),
-                                            Container(
-                                              margin: EdgeInsets.symmetric(
-                                                  horizontal:
-                                                      size.width * 0.02),
-                                              width: size.width * 0.01,
-                                              height: size.height * 0.03,
-                                              decoration: const BoxDecoration(
-                                                border: Border(
-                                                  right: BorderSide(
-                                                    color: Color(0xFF00A541),
-                                                    width: 4,
-                                                  ),
-                                                  left: BorderSide(
-                                                    color: Colors.black,
-                                                    width: 2,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                            Text(
-                                              "%${producto.discount}",
-                                              style: bodySmall,
-                                            ),
-                                          ],
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            );
-                          })
-                      : ListView.builder(
-                          physics: const BouncingScrollPhysics(),
-                          itemCount: marcadoresCasetaCCBrisas.length,
-                          itemBuilder: (context, index) {
-                            // READ : DEBO CAMBIAR POR EL VECTOR DEL COMERCIAL SELECCIONADO DE TRABAJO
-                            Caseta caseta = marcadoresCasetaCCBrisas[index];
-                            return GestureDetector(
-                              onTap: () {},
-                              child: SizedBox(
-                                height: size.height * 0.085,
-                                width: size.width,
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      height: size.height * 0.085,
-                                      width: size.width * 0.23,
-                                      child: Center(
-                                        child: Container(
-                                          height: size.height * 0.75,
-                                          width: size.width * 0.11,
-                                          decoration: BoxDecoration(
-                                            color:
-                                                Colors.black.withOpacity(0.3),
-                                            shape: BoxShape.circle,
-                                          ),
-                                          child: Icon(
-                                            Icons.location_on_outlined,
-                                            size: 30,
-                                            color: Colors.black,
-                                            shadows: shadowPP,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Container(
-                                      height: size.height * 0.085,
-                                      width: size.width * 0.77,
-                                      decoration: BoxDecoration(
-                                        border: Border(
-                                          bottom: BorderSide(
-                                            color:
-                                                Colors.black.withOpacity(0.25),
-                                            width: 1.5,
-                                          ),
-                                        ),
-                                      ),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        children: [
-                                          Container(
-                                            padding: EdgeInsets.only(
-                                                top: size.height * 0.01),
-                                            width: size.width * 0.65,
-                                            child: Column(
-                                              children: [
-                                                Align(
-                                                  alignment:
-                                                      Alignment.bottomLeft,
-                                                  child: Text(caseta.name,
-                                                      style: displayMedium,
-                                                      overflow:
-                                                          TextOverflow.ellipsis,
-                                                      maxLines: 1),
-                                                ),
-                                                Align(
-                                                  alignment:
-                                                      Alignment.bottomLeft,
-                                                  child: Text(caseta.direction,
-                                                      style: GoogleFonts.anta(
-                                                          fontSize: size.width *
-                                                              0.055,
-                                                          color: Colors.black
-                                                              .withOpacity(0.4),
-                                                          fontWeight:
-                                                              FontWeight.w400),
-                                                      overflow:
-                                                          TextOverflow.ellipsis,
-                                                      maxLines: 1),
-                                                )
-                                              ],
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: EdgeInsets.only(
-                                                left: size.width * 0.015),
-                                            child: Icon(
-                                              FontAwesomeIcons.locationArrow,
-                                              color: Colors.black,
-                                              shadows: shadowPPN3,
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            );
-                          }))),
+          StyledProductView(),
           // Search Bar
           Positioned(
               top: size.height * 0.12,
@@ -757,6 +518,226 @@ class _SearchScreenState extends State<SearchScreen> {
               )),
         ],
       ),
+    );
+  }
+}
+
+class StyledProductView extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final optionsMapBloc = BlocProvider.of<OptionsMapBloc>(context);
+    return Positioned(
+      top: size.height * 0.19,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 16),
+        width: size.width,
+        height: size.height * 0.9,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30),
+            topRight: Radius.circular(30),
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 10,
+              offset: Offset(0, -5),
+            ),
+          ],
+        ),
+        child: optionsMapBloc.state.options == MapOptions.product
+            ? _buildProductGrid(context, size)
+            : _buildLocationList(context, size),
+      ),
+    );
+  }
+
+  Widget _buildProductGrid(BuildContext context, Size size) {
+    final productBloc = BlocProvider.of<ProductBloc>(context, listen: true);
+    final optionsMapBloc = BlocProvider.of<OptionsMapBloc>(context);
+
+    return GridView.builder(
+      physics: BouncingScrollPhysics(),
+      padding: EdgeInsets.only(top: 20, bottom: size.height * 0.1),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        mainAxisSpacing: 20,
+        crossAxisSpacing: 15,
+        childAspectRatio: 0.75,
+      ),
+      itemCount: productBloc.state.viewClientProductos.length,
+      itemBuilder: (context, index) {
+        final producto = productBloc.state.viewClientProductos[index];
+        return FadeInUp(
+          duration: Duration(milliseconds: 200 + (index * 100)),
+          child: GestureDetector(
+            onTap: () {
+              optionsMapBloc.add(const OnChangeSearchPageMap(false));
+              productBloc.add(OnChangeProduct(producto));
+              Navigator.pushNamed(context, '/product');
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.2),
+                    spreadRadius: 2,
+                    blurRadius: 8,
+                    offset: Offset(0, 4),
+                  ),
+                ],
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    flex: 3,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.vertical(top: Radius.circular(20)),
+                        image: DecorationImage(
+                          image: NetworkImage(producto.image),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      child: Align(
+                        alignment: Alignment.topRight,
+                        child: Container(
+                          margin: EdgeInsets.all(8),
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                          decoration: BoxDecoration(
+                            color: kPrimaryColor,
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Text(
+                            "${producto.discount}% OFF",
+                            style: GoogleFonts.poppins(
+                              color: Colors.white,
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: Padding(
+                      padding: EdgeInsets.all(12),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            producto.name,
+                            style: GoogleFonts.poppins(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ),
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                '\$${producto.price}',
+                                style: GoogleFonts.poppins(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: kPrimaryColor,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildLocationList(BuildContext context, Size size) {
+    return ListView.builder(
+      physics: BouncingScrollPhysics(),
+      padding: EdgeInsets.symmetric(vertical: 16),
+      itemCount: marcadoresCasetaCCBrisas.length,
+      itemBuilder: (context, index) {
+        final caseta = marcadoresCasetaCCBrisas[index];
+        return FadeInLeft(
+          duration: Duration(milliseconds: 200 + (index * 100)),
+          child: Container(
+            margin: EdgeInsets.symmetric(vertical: 8, horizontal: 4),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(16),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.1),
+                  spreadRadius: 1,
+                  blurRadius: 6,
+                  offset: Offset(0, 3),
+                ),
+              ],
+            ),
+            child: ListTile(
+              contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              leading: Container(
+                padding: EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: kCuartoColor.withOpacity(0.1),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(
+                  Icons.location_on,
+                  color: kCuartoColor,
+                  size: 24,
+                ),
+              ),
+              title: Text(
+                caseta.name,
+                style: GoogleFonts.poppins(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              subtitle: Text(
+                caseta.direction,
+                style: GoogleFonts.poppins(
+                  fontSize: 14,
+                  color: Colors.grey[600],
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+              trailing: Container(
+                padding: EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: kPrimaryColor.withOpacity(0.1),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(
+                  FontAwesomeIcons.locationArrow,
+                  color: kPrimaryColor,
+                  size: 16,
+                ),
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }

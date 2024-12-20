@@ -1,3 +1,116 @@
+// Lista de rutas separadas
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+final List<List<LatLng>> rutasCasera2 = [
+  // Entrada 1
+  [
+    const LatLng(-17.790287, -63.148954),
+    const LatLng(-17.790393, -63.148963),
+    const LatLng(-17.790496, -63.14897),
+    const LatLng(-17.790496, -63.149),
+    const LatLng(-17.790487, -63.148999),
+  ],
+
+  // Entrada 2
+  [
+    const LatLng(-17.790263, -63.148893),
+    const LatLng(-17.790385, -63.148898),
+    const LatLng(-17.790496, -63.148909),
+    const LatLng(-17.790496, -63.14897),
+    const LatLng(-17.790496, -63.149),
+    const LatLng(-17.790487, -63.148999),
+  ],
+
+  // Entrada 3
+  [
+    const LatLng(-17.790238, -63.148829),
+    const LatLng(-17.790389, -63.148838),
+    const LatLng(-17.790496, -63.148843),
+    const LatLng(-17.790496, -63.148909),
+    const LatLng(-17.790496, -63.14897),
+    const LatLng(-17.790496, -63.149),
+    const LatLng(-17.790487, -63.148999),
+  ],
+
+  // Entrada 4
+  [
+    const LatLng(-17.790212, -63.148766),
+    const LatLng(-17.790295, -63.14877),
+    const LatLng(-17.790294, -63.148953),
+    const LatLng(-17.790393, -63.148963),
+    const LatLng(-17.790496, -63.14897),
+    const LatLng(-17.790496, -63.149),
+    const LatLng(-17.790487, -63.148999),
+  ],
+
+  // Entrada 5
+  [
+    const LatLng(-17.790499, -63.148671),
+    const LatLng(-17.790496, -63.148843),
+    const LatLng(-17.790496, -63.148909),
+    const LatLng(-17.790496, -63.14897),
+    const LatLng(-17.790496, -63.149),
+    const LatLng(-17.790487, -63.148999),
+  ],
+];
+
+final List<List<LatLng>> rutasCaseta1 = [
+  // Ruta A
+  [
+    const LatLng(-17.781004, -63.189904),
+    const LatLng(-17.781003, -63.189828),
+    const LatLng(-17.780986, -63.189828),
+  ],
+
+  // Ruta B
+  [
+    const LatLng(-17.780274, -63.189774),
+    const LatLng(-17.780313, -63.189801),
+    const LatLng(-17.780687, -63.189794),
+    const LatLng(-17.781002, -63.189794),
+    const LatLng(-17.781003, -63.189828),
+    const LatLng(-17.780986, -63.189828),
+  ],
+
+  // Ruta C
+  [
+    const LatLng(-17.781162, -63.189453),
+    const LatLng(-17.78113, -63.189481),
+    const LatLng(-17.781024, -63.189488),
+    const LatLng(-17.781024, -63.189715),
+    const LatLng(-17.781001, -63.189749),
+    const LatLng(-17.781002, -63.189794),
+    const LatLng(-17.780986, -63.189828),
+  ],
+
+  // Ruta D
+  [
+    const LatLng(-17.781025, -63.189148),
+    const LatLng(-17.780998, -63.189216),
+    const LatLng(-17.780996, -63.189468),
+    const LatLng(-17.781024, -63.189488),
+    const LatLng(-17.781024, -63.189715),
+    const LatLng(-17.781001, -63.189749),
+    const LatLng(-17.781002, -63.189794),
+    const LatLng(-17.781003, -63.189828),
+    const LatLng(-17.780986, -63.189828),
+  ],
+
+  // Ruta E
+  [
+    const LatLng(-17.780337, -63.18947),
+    const LatLng(-17.780386, -63.189464),
+    const LatLng(-17.780418, -63.189496),
+    const LatLng(-17.78071, -63.189487),
+    const LatLng(-17.781024, -63.189488),
+    const LatLng(-17.781024, -63.189715),
+    const LatLng(-17.781001, -63.189749),
+    const LatLng(-17.781002, -63.189794),
+    const LatLng(-17.781003, -63.189828),
+    const LatLng(-17.780986, -63.189828),
+  ],
+];
+
 class DataWindow {
   final String name;
   final String owner;
@@ -500,8 +613,8 @@ List<Caseta> marcadoresCasetaCCBrisas = [
     imagen:
         "https://i.pinimg.com/564x/e7/b6/1d/e7b61d04ea6cb7b86ebbe4ddfd440087.jpg",
     direction: "Calle 20 de Octubre 789",
-    longitud: -63.17610207636967,
-    latitud: -17.749280386289694,
+    longitud: -63.189826,
+    latitud: -17.780965,
     telefono: "+591-2-3456789",
     weburl: "https://www.florerialaprimavera.com",
     googleMapsurl:
@@ -545,8 +658,8 @@ List<Caseta> marcadoresCasetaCCBrisas = [
     imagen:
         "https://i.pinimg.com/564x/47/4c/41/474c41293e6d8663f213efd1b37cf65a.jpg",
     direction: "Calle Sucre esquina Bolívar",
-    longitud: -63.17640031350345,
-    latitud: -17.749030521226945,
+    longitud: -63.148999,
+    latitud: -17.790487,
     telefono: "+591-2-3456789",
     weburl: "https://www.panaderialaesquina.com",
     googleMapsurl:
@@ -866,8 +979,8 @@ List<Caseta> marcadoresCasetaCCanoto = [
     imagen:
         "https://i.pinimg.com/564x/e7/b6/1d/e7b61d04ea6cb7b86ebbe4ddfd440087.jpg",
     direction: "Calle 20 de Octubre 789",
-    longitud: -63.18983758262379,
-    latitud: -17.781120194839623,
+    longitud: -63.189826,
+    latitud: -17.780965,
     telefono: "+591-2-3456789",
     weburl: "https://www.florerialaprimavera.com",
     googleMapsurl:
@@ -1047,7 +1160,7 @@ List<Caseta> marcadoresCasetaCMaquito = [
     name: "Florería Flores del Valle",
     owner: "Mariana Sánchez",
     imagen:
-        "https://i.pinimg.com/564x/b8/1c/54/b81c542f7c879361b559c964af0f1f03.jpg",
+        "https://i.pinimg.com/736x/3f/28/63/3f28634f68930ab545664dfaee74c0fd.jpg",
     direction: "Avenida América 456",
     longitud: -63.14873637715188,
     latitud: -17.790244889747893,
@@ -1062,7 +1175,7 @@ List<Caseta> marcadoresCasetaCMaquito = [
     name: "Librería Letras y Libros",
     owner: "Sofía Ramírez",
     imagen:
-        "https://i.pinimg.com/564x/c4/94/8b/c4948b2b81f582b01d9bfe3d4b9211da.jpg",
+        "https://i.pinimg.com/736x/6e/52/a7/6e52a75b8ace05948e3a00a670d8085b.jpg",
     direction: "Calle Bolívar 321",
     longitud: -63.148991186998686,
     latitud: -17.790312569398296,
@@ -1077,7 +1190,7 @@ List<Caseta> marcadoresCasetaCMaquito = [
     name: "Veterinaria Mascotas Felices",
     owner: "Laura González",
     imagen:
-        "https://i.pinimg.com/564x/0a/50/e3/0a50e354e6a7d3225507509904e3b1be.jpg",
+        "https://i.pinimg.com/736x/0d/52/75/0d5275b9d50e451694450c1f6e8bf5c3.jpg",
     direction: "Calle Murillo 123",
     longitud: -63.148928155089216,
     latitud: -17.790270429241616,
@@ -1092,7 +1205,7 @@ List<Caseta> marcadoresCasetaCMaquito = [
     name: "Tienda de Electrónica TecnoWorld",
     owner: "Diego Martínez",
     imagen:
-        "https://i.pinimg.com/564x/3b/5d/59/3b5d59313ef98d7ee5dd975507094bfb.jpg",
+        "https://i.pinimg.com/736x/a1/38/70/a138709e4ba90ca2af78d53c1bb73c4f.jpg",
     direction: "Calle 21 de Mayo 789",
     longitud: -63.148705531749364,
     latitud: -17.790511777277004,
@@ -1107,10 +1220,10 @@ List<Caseta> marcadoresCasetaCMaquito = [
     name: "Panadería La Esquina",
     owner: "Carlos Gutiérrez",
     imagen:
-        "https://i.pinimg.com/564x/18/32/f5/1832f54baa4584e0ea7277b1b248f1d8.jpg",
+        "https://i.pinimg.com/736x/c4/1b/0d/c41b0df293457c58625cc26286afb78d.jpg",
     direction: "Calle Sucre 567",
-    longitud: -63.14893217840259,
-    latitud: -17.79048879176388,
+    longitud: -63.148999,
+    latitud: -17.790487,
     telefono: "+591-2-3456789",
     weburl: "https://www.panaderialaesquina.com",
     googleMapsurl:
@@ -1122,7 +1235,7 @@ List<Caseta> marcadoresCasetaCMaquito = [
     name: "Cafetería Aromas del Café",
     owner: "Ana María Rodríguez",
     imagen:
-        "https://i.pinimg.com/564x/7a/f5/ee/7af5ee8a4bc9f9254edfca586bbbf40b.jpg",
+        "https://i.pinimg.com/236x/d2/38/14/d2381476eff1d672244578a2d5a27d52.jpg",
     direction: "Avenida Libertad 987",
     longitud: -63.14871223727166,
     latitud: -17.79023467394938,
@@ -1137,7 +1250,7 @@ List<Caseta> marcadoresCasetaCMaquito = [
     name: "Farmacia San Jorge",
     owner: "Roberto López",
     imagen:
-        "https://i.pinimg.com/564x/32/76/ca/3276cac88dc72176c1736951c15211e5.jpg",
+        "https://i.pinimg.com/736x/21/69/bd/2169bde6ec6875c761dea2abebdde552.jpg",
     direction: "Calle Junín 456",
     longitud: -63.148977775954116,
     latitud: -17.790298522680505,
@@ -1152,7 +1265,7 @@ List<Caseta> marcadoresCasetaCMaquito = [
     name: "Peluquería Estilo y Belleza",
     owner: "María Fernández",
     imagen:
-        "https://i.pinimg.com/564x/4f/92/87/4f9287c33d0d3efc19a9c9f267d7b3b3.jpg",
+        "https://i.pinimg.com/736x/39/63/85/39638555af077469c3d4b128347c2a5f.jpg",
     direction: "Calle Ballivián 789",
     longitud: -63.148942907238236,
     latitud: -17.790435158888418,
@@ -1167,7 +1280,7 @@ List<Caseta> marcadoresCasetaCMaquito = [
     name: "Carnicería Don Pepe",
     owner: "Pedro Gómez",
     imagen:
-        "https://i.pinimg.com/564x/8e/5d/6f/8e5d6f494dc38554de6c9c116b2f8b58.jpg",
+        "https://i.pinimg.com/736x/33/ea/a7/33eaa7c9294006775af64fa0e15b412c.jpg",
     direction: "Calle Suárez 234",
     longitud: -63.14873645027832,
     latitud: -17.790458903701246,
@@ -1182,7 +1295,7 @@ List<Caseta> marcadoresCasetaCMaquito = [
     name: "Restaurante La Terraza",
     owner: "Luisa García",
     imagen:
-        "https://i.pinimg.com/564x/5b/3e/9a/5b3e9a8f878cb090d8e8a2a0c50b7a06.jpg",
+        "https://i.pinimg.com/736x/ac/c0/8d/acc08d17a230d69efc4a359f9e32c016.jpg",
     direction: "Calle Campero 789",
     longitud: -63.14869822880129,
     latitud: -17.790507428678055,

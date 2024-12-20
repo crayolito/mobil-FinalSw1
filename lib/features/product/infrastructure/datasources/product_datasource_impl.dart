@@ -6,7 +6,7 @@ import 'package:dio/dio.dart';
 class ProductDatasourceImpl extends ProductDatasource {
   final dio = Dio(
     BaseOptions(
-      baseUrl: 'https://projectsw1-dcfab820f5a3.herokuapp.com/api',
+      baseUrl: 'http://143.198.56.179:3000/api',
     ),
   );
 
@@ -19,7 +19,7 @@ class ProductDatasourceImpl extends ProductDatasource {
   @override
   Future<List<Producto>> getProducts() async {
     try {
-      var response = await dio.request('/products',
+      var response = await dio.request('/products?limit=100&offset=0',
           options: Options(method: 'GET', responseType: ResponseType.json));
       if (response.statusCode == 200) {
         final structureData = ProductosMapper.fromJsonList(response.data);

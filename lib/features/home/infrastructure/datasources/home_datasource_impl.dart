@@ -6,7 +6,7 @@ import 'package:google_maps_flutter_platform_interface/src/types/location.dart';
 class HomeDatasourceImpl implements HomeDatasource {
   final dio = Dio(
     BaseOptions(
-      baseUrl: 'https://api-sw1.herokuapp.com',
+      baseUrl: 'http://143.198.56.179:3000/api',
     ),
   );
 

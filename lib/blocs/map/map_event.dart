@@ -42,3 +42,22 @@ class OnChangedDetailsCC extends MapEvent {
 class OnChangedMapClean extends MapEvent {
   const OnChangedMapClean();
 }
+
+class OnGenerateRutaOptimaIntera extends MapEvent {
+  final List<LatLng> puntosRuta;
+  final bool
+      isOptimalRoute; // true para ruta óptima, false para índice de complejidad
+
+  const OnGenerateRutaOptimaIntera({
+    required this.puntosRuta,
+    required this.isOptimalRoute,
+  });
+}
+
+class OnRutaCliente extends MapEvent {
+  const OnRutaCliente();
+}
+
+class OnCleanRutaPasada extends MapEvent {
+  const OnCleanRutaPasada();
+}

@@ -1,4 +1,5 @@
 import 'package:app_sw1final/blocs/infoMarker/info_marker_bloc.dart';
+import 'package:app_sw1final/blocs/map/map_bloc.dart';
 import 'package:app_sw1final/blocs/options-map/options_map_bloc.dart';
 import 'package:app_sw1final/config/constants/constantes.dart';
 import 'package:app_sw1final/helpers/cantidadTexto.dart';
@@ -196,26 +197,35 @@ class _BodyIWState extends State<BodyIW> with SingleTickerProviderStateMixin {
                                           child: Row(
                                             children: [
                                               ...entradasLabel.map((e) {
-                                                return Container(
-                                                  margin: EdgeInsets.only(
-                                                    right: size.width * 0.07,
-                                                  ),
-                                                  padding: EdgeInsets.all(15),
-                                                  alignment: Alignment.center,
-                                                  decoration: BoxDecoration(
-                                                      color: Colors.black,
-                                                      shape: BoxShape.circle,
-                                                      boxShadow: [
-                                                        BoxShadow(
-                                                          color: Colors.black,
-                                                          blurRadius: 3,
-                                                          offset: const Offset(
-                                                              0, 0),
-                                                        ),
-                                                      ]),
-                                                  child: Text(
-                                                    e,
-                                                    style: displayLarge,
+                                                return GestureDetector(
+                                                  onTap: () {
+                                                    final mapBloc = BlocProvider
+                                                        .of<MapBloc>(context);
+                                                    mapBloc
+                                                        .add(OnRutaCliente());
+                                                  },
+                                                  child: Container(
+                                                    margin: EdgeInsets.only(
+                                                      right: size.width * 0.07,
+                                                    ),
+                                                    padding: EdgeInsets.all(15),
+                                                    alignment: Alignment.center,
+                                                    decoration: BoxDecoration(
+                                                        color: Colors.black,
+                                                        shape: BoxShape.circle,
+                                                        boxShadow: [
+                                                          BoxShadow(
+                                                            color: Colors.black,
+                                                            blurRadius: 3,
+                                                            offset:
+                                                                const Offset(
+                                                                    0, 0),
+                                                          ),
+                                                        ]),
+                                                    child: Text(
+                                                      e,
+                                                      style: displayLarge,
+                                                    ),
                                                   ),
                                                 );
                                               })

@@ -66,8 +66,9 @@ class BarSearch extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 15),
           child: GestureDetector(
             onTap: () {
+              print("si presiono");
               optionsMapBloc.add(const OnChangeSearchPageMap(true));
-              productBloc.add(OnProcessGetProducts());
+              productBloc.add(const OnProcessGetProducts());
               Navigator.pushNamed(context, '/search');
             },
             child: Container(
